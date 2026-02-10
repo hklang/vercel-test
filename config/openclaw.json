@@ -1,0 +1,170 @@
+{
+  "meta": {
+    "lastTouchedVersion": "2026.2.6-3",
+    "lastTouchedAt": "2026-02-09T06:32:11.022Z"
+  },
+  "wizard": {
+    "lastRunAt": "2026-02-08T08:52:49.845Z",
+    "lastRunVersion": "2026.2.6-3",
+    "lastRunCommand": "doctor",
+    "lastRunMode": "local"
+  },
+  "browser": {
+    "enabled": true,
+    "defaultProfile": "mychrome",
+    "profiles": {
+      "mychrome": {
+        "cdpUrl": "http://127.0.0.1:9222",
+        "color": "#FF4500"
+      }
+    }
+  },
+  "auth": {
+    "profiles": {
+      "minimax-portal:default": {
+        "provider": "minimax-portal",
+        "mode": "oauth"
+      }
+    }
+  },
+  "models": {
+    "providers": {
+      "minimax-portal": {
+        "baseUrl": "https://api.minimaxi.com/anthropic",
+        "apiKey": "minimax-oauth",
+        "api": "anthropic-messages",
+        "models": [
+          {
+            "id": "MiniMax-M2.1",
+            "name": "MiniMax M2.1",
+            "reasoning": false,
+            "input": [
+              "text"
+            ],
+            "cost": {
+              "input": 0,
+              "output": 0,
+              "cacheRead": 0,
+              "cacheWrite": 0
+            },
+            "contextWindow": 200000,
+            "maxTokens": 8192
+          },
+          {
+            "id": "MiniMax-M2.1-lightning",
+            "name": "MiniMax M2.1 Lightning",
+            "reasoning": false,
+            "input": [
+              "text"
+            ],
+            "cost": {
+              "input": 0,
+              "output": 0,
+              "cacheRead": 0,
+              "cacheWrite": 0
+            },
+            "contextWindow": 200000,
+            "maxTokens": 8192
+          }
+        ]
+      }
+    }
+  },
+  "agents": {
+    "defaults": {
+      "model": {
+        "primary": "minimax-portal/MiniMax-M2.1"
+      },
+      "models": {
+        "minimax-portal/MiniMax-M2.1": {
+          "alias": "minimax-m2.1"
+        },
+        "minimax-portal/MiniMax-M2.1-lightning": {
+          "alias": "minimax-m2.1-lightning"
+        }
+      },
+      "workspace": "/home/lang/.openclaw/workspace",
+      "compaction": {
+        "mode": "safeguard"
+      },
+      "maxConcurrent": 4,
+      "subagents": {
+        "maxConcurrent": 8
+      }
+    }
+  },
+  "messages": {
+    "ackReactionScope": "group-mentions"
+  },
+  "commands": {
+    "native": "auto",
+    "nativeSkills": "auto"
+  },
+  "channels": {
+    "feishu": {
+      "enabled": true,
+      "appId": "cli_a90d9b8877f89bc8",
+      "appSecret": "iKaAMz4YuW5aiWpFcuA6lc87fa13tyGf"
+    },
+    "dingtalk": {
+    "messageType": "card",
+      "cardTemplateId": "73ca276f-78a9-4b35-a3e3-276764ceb5bf.schema",
+      "enabled": true,
+      "clientId": "dinglseyzcif1upmpg6o",
+      "clientSecret": "sllOVE2eq-nBRbq7aWN8lijvsdRG1sP0FWy3RniUciXRTjtlK_gqpRLRFAsO3r5y",
+      "robotCode": "dinglseyzcif1upmpg6o",
+      "corpId": "dinglseyzcif1upmpg6o",
+      "agentId": "4259256884",
+      "dmPolicy": "open",
+      "groupPolicy": "open",      
+      "messageType": "markdown",
+      "debug": false
+    }   
+    
+    
+  },
+  "gateway": {
+    "port": 18789,
+    "mode": "local",
+    "auth": {
+      "mode": "token",
+      "token": "fdedb48e088f6eb57912b4980c8a8c8d3500bdcab2b4c134"
+    },
+    "tailscale": {
+      "mode": "off",
+      "resetOnExit": false
+    }
+  },
+  "skills": {
+    "install": {
+      "nodeManager": "npm"
+    }
+  },
+  "plugins": {
+    "entries": {
+      "minimax-portal-auth": {
+        "enabled": true
+      },
+      "feishu": {
+        "enabled": true
+      },
+      "dingtalk": {
+        "enabled": true
+      }
+    },
+    "load": {
+      "paths": [
+        "/home/lang/openclaw-channel-dingtalk"
+      ]
+    },
+    "installs": {
+      "dingtalk": {
+        "source": "path",
+        "sourcePath": "/home/lang/openclaw-channel-dingtalk",
+        "installPath": "/home/lang/openclaw-channel-dingtalk",
+        "version": "2.1.2",
+        "installedAt": "2026-02-09T06:32:10.575Z"
+      }
+    }
+  }
+}
