@@ -1,0 +1,199 @@
+{
+  "report_time": "2026-02-11T02:06:30",
+  "data_range": "最近20期",
+  "total_history": 2897,
+  "methods": {
+    "hot": {
+      "name": "热号法",
+      "description": "选择最近10期内出现频率最高的7个号码",
+      "avg_hit_rate": 0.2429,
+      "hit_3plus_rate": 0.3,
+      "hit_3plus_count": "6/20",
+      "rank": 4,
+      "recommended": true,
+      "weight": 0.2,
+      "pros": [
+        "符合强者恒强的短期规律",
+        "策略简单执行方便",
+        "表现优于冷号法"
+      ],
+      "cons": [
+        "容易陷入热号陷阱",
+        "热号可能已到周期末端",
+        "单独使用命中率偏低"
+      ],
+      "best_for": [
+        "短期追热",
+        "辅助选号"
+      ]
+    },
+    "cold": {
+      "name": "冷号法",
+      "description": "选择近期未出现(冷号)和出现较少(温号)的号码",
+      "avg_hit_rate": 0.1857,
+      "hit_3plus_rate": 0.05,
+      "hit_3plus_count": "1/20",
+      "rank": 5,
+      "recommended": false,
+      "weight": 0,
+      "pros": [
+        "回补时可能有较高回报",
+        "成本较低"
+      ],
+      "cons": [
+        "命中率最低",
+        "冷号可能持续走冷",
+        "需要较长等待时间"
+      ],
+      "best_for": [
+        "不推荐单独使用"
+      ],
+      "warning": "3+命中率仅5%，强烈建议避免单独使用"
+    },
+    "missing": {
+      "name": "遗漏值法",
+      "description": "基于遗漏回补理论，选择长期未出现的号码",
+      "avg_hit_rate": 0.3071,
+      "hit_3plus_rate": 0.35,
+      "hit_3plus_count": "7/20",
+      "rank": 1,
+      "recommended": true,
+      "weight": 0.6,
+      "pros": [
+        "5种方法中表现最佳",
+        "基于概率回归理论有统计学依据",
+        "对遗漏号码的回补把握较大",
+        "适合中长周期选号"
+      ],
+      "cons": [
+        "依赖足够长的历史数据(需30期以上)",
+        "极端遗漏号码可能失效",
+        "需要持续跟踪遗漏值变化"
+      ],
+      "best_for": [
+        "追求较高命中率",
+        "中期选号策略"
+      ]
+    },
+    "odd_even": {
+      "name": "奇偶法",
+      "description": "分析奇偶分布规律，选取众数比例的奇偶组合",
+      "avg_hit_rate": 0.2571,
+      "hit_3plus_rate": 0.25,
+      "hit_3plus_count": "5/20",
+      "rank": 2,
+      "recommended": true,
+      "weight": 0,
+      "pros": [
+        "策略直观易于理解",
+        "利用短期奇偶分布规律",
+        "不依赖长期历史数据"
+      ],
+      "cons": [
+        "奇偶分布变化较快",
+        "众数法可能错过偏态机会",
+        "单独使用命中率不够理想"
+      ],
+      "best_for": [
+        "奇偶分布出现明显趋势时",
+        "辅助验证手段"
+      ]
+    },
+    "range": {
+      "name": "大小号法",
+      "description": "分析3个区间(1-10小,11-20中,21-30大)的分布规律",
+      "avg_hit_rate": 0.25,
+      "hit_3plus_rate": 0.3,
+      "hit_3plus_count": "6/20",
+      "rank": 3,
+      "recommended": true,
+      "weight": 0.2,
+      "pros": [
+        "区间分布相对稳定",
+        "可视化强便于分析",
+        "命中率略高于热号法"
+      ],
+      "cons": [
+        "区间边界号码处理困难",
+        "极端分布时预测困难",
+        "单独使用效果有限"
+      ],
+      "best_for": [
+        "区间分布出现明显偏态时",
+        "控制号码分布范围"
+      ]
+    }
+  },
+  "ranking": [
+    {
+      "rank": 1,
+      "method": "missing",
+      "avg_rate": "30.7%"
+    },
+    {
+      "rank": 2,
+      "method": "odd_even",
+      "avg_rate": "25.7%"
+    },
+    {
+      "rank": 3,
+      "method": "range",
+      "avg_rate": "25.0%"
+    },
+    {
+      "rank": 4,
+      "method": "hot",
+      "avg_rate": "24.3%"
+    },
+    {
+      "rank": 5,
+      "method": "cold",
+      "avg_rate": "18.6%"
+    }
+  ],
+  "best_method": "missing",
+  "strategy": {
+    "primary": "missing",
+    "primary_weight": 0.6,
+    "secondary": [
+      "hot",
+      "range"
+    ],
+    "secondary_weight": 0.2,
+    "avoid": [
+      "cold"
+    ],
+    "recommended_combination": "遗漏值法(60%) + 热号法(20%) + 大小号法(20%)"
+  },
+  "key_findings": [
+    "遗漏值法3+命中率达35%，显著优于其他方法",
+    "热号法优于冷号法5.7个百分点，当前趋势偏向热号回补",
+    "冷号法3+命中率仅5%，强烈建议避免单独使用",
+    "奇偶法和大小号法表现相近，可作为辅助验证"
+  ],
+  "trends": {
+    "current_trend": "号码趋势偏向热号回补",
+    "hot_vs_cold": "热号法(24.3%) > 冷号法(18.6%)",
+    "missing_effective": true,
+    "recommendation": "优先使用遗漏值法，热号法作为补充"
+  },
+  "warnings": [
+    "所有方法均为基于历史数据的概率分析，不保证准确",
+    "彩票具有随机性，任何方法都无法保证预测结果",
+    "请理性购彩，量力而行",
+    "本报告仅供学习研究使用"
+  ],
+  "next_review": "24小时后或20期新数据后",
+  "hot_avg": 0.2429,
+  "hot_3plus_rate": 0.3,
+  "cold_avg": 0.1857,
+  "cold_3plus_rate": 0.05,
+  "missing_avg": 0.3071,
+  "missing_3plus_rate": 0.35,
+  "odd_even_avg": 0.2571,
+  "odd_even_3plus_rate": 0.25,
+  "range_avg": 0.25,
+  "range_3plus_rate": 0.3,
+  "best_method_name": "遗漏值法",
+  "best_avg": 0.3071
+}

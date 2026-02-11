@@ -1,0 +1,14 @@
+{
+  "sum_range": [
+    85,
+    130
+  ],
+  "min_consecutive": 1,
+  "max_consecutive": 3,
+  "hot_threshold": 2,
+  "cold_threshold": 5,
+  "repeat_range": [
+    1,
+    3
+  ]
+}

@@ -86,19 +86,28 @@ echo "📍 位置：Asia/Shanghai 时区"
 
 ---
 
-## 🌐 域外搜索资讯（新功能）
+## 🌐 域外搜索资讯（完全免费方案）
 
-### 可用外部资源
+> 💰 **Brave API 仅免费1个月，已替换为 100% 免费方案**
 
-| 类型 | 来源 | 用途 |
-|------|------|------|
-| 🔍 搜索引擎 | Google (Brave API) | 综合热点搜索 |
-| 💻 科技社区 | Hacker News | 技术新闻/讨论 |
-| 🗳️ 社交平台 | Reddit | 全球热门话题 |
-| 📊 代码平台 | GitHub Trending | 开源项目热点 |
-| 🎥 视频趋势 | YouTube Trending | 热门视频 |
-| 📈 财经数据 | TradingView | 市场图表分析 |
-| 🧠 学术资源 | Arxiv | AI/ML学术论文 |
+### ✅ 免费数据源
+
+| 类型 | 来源 | 用途 | 成本 |
+|------|------|------|------|
+| 🔧 GitHub Trending | github.com/trending | 开源项目热点 | 完全免费 |
+| 💻 Hacker News | news.ycombinator.com | 技术讨论社区 | 完全免费 |
+| 🗳️ Reddit | reddit.com | 社区热门话题 | 完全免费 |
+| 🔍 v2rayA 代理 | 已配置 | Google/GitHub访问 | 已配置 |
+
+### 📦 免费源脚本
+
+**脚本位置**: `zixun/cron/scripts/free_sources.py`
+
+```bash
+# 获取所有免费数据源
+cd /home/lang/.openclaw/workspace/zixun/cron/scripts
+python3 free_sources.py
+```
 
 ### 添加域外搜索定时任务
 
@@ -108,20 +117,10 @@ openclaw cron add \
   --cron "0 */6 * * *" \
   --tz "Asia/Shanghai" \
   --session isolated \
-  --message "执行域外搜索：1.使用web_search搜索今日Google Trends热点 2.获取Hacker News热门话题 3.抓取Reddit热门讨论 4.搜索AI/科技前沿关键词 5.搜索GitHub Trending 6.整理成域外资讯摘要发送到飞书群" \
+  --message "执行域外搜索：1.获取GitHub Trending热门项目 2.获取Hacker News Top 10 3.获取Reddit热门讨论 4.政治敏感内容过滤 5.整理成中文资讯发送到飞书群" \
   --announce \
   --channel feishu \
   --to "oc_982e81066ead19e659ccff0f5f509ddd"
-```
-
-### 搜索关键词示例
-
-```json
-{
-  "科技AI": ["GPT-4", "GPT-5", "Claude", "LLM", "AGI", "OpenAI", "Anthropic"],
-  "商业财经": ["NASDAQ", "S&P 500", "Tesla", "Bitcoin", "Ethereum"],
-  "热门趋势": ["viral", "trending", "breaking news", "popular"]
-}
 ```
 
 ### 域外资讯推送模板
@@ -129,37 +128,50 @@ openclaw cron add \
 ```
 🌍 域外资讯 · 全球视野
 ━━━━━━━━━━━━━━━━━━━━━━
-🔍 Google Trends 热点
-1. 热点话题1
-2. 热点话题2
-...
+
+🔧 GitHub Trending Top 10
+━━━━━━━━━━━━━━━━━━━━━━
+1. openai/chatgpt-plugin ⭐2.5k
+   ChatGPT检索插件...
+2. microsoft/TypeChat ⭐1.8k
+   类型安全的AI对话...
+3. stanford-oval/AgentGPT ⭐1.5k
+   浏览器中的自主AI代理...
 
 💻 Hacker News Top 10
-1. 标题1 (分数)
-2. 标题2 (分数)
-...
-
-🤖 AI/科技前沿
-• 论文/产品/突破性进展
-
-🔧 GitHub Trending
-• 项目1 (⭐ stars)
-• 项目2 (⭐ stars)
-...
 ━━━━━━━━━━━━━━━━━━━━━━
-🦊 来源：Google Trends + Hacker News + Reddit + GitHub
-📝 语言：中文发布
+1. Show HN: 我的AI项目 ⭐450
+2. Ask HN: 如何学习编程？ ⭐320
+3. Show HN: 新编程语言 ⭐280
+
+🤖 Reddit 热门讨论
+━━━━━━━━━━━━━━━━━━━━━━
+r/programming: AI生成代码讨论 ⭐2.5k
+r/technology: 科技新闻 ⭐2.0k
+r/AI: ChatGPT新功能 ⭐1.8k
+
+━━━━━━━━━━━━━━━━━━━━━━
+🦊 来源：GitHub Trending + Hacker News + Reddit
+📝 语言：100% 中文
+💰 成本：完全免费 ✅
+⚠️ 内容已过滤政治敏感信息
 ```
 
 ### 功能特点
-- ✅ **语言**: 中文发布（所有国际资讯翻译整理成中文）
-- ✅ 自动搜索 Google Trends
-- ✅ 抓取 Hacker News 热门讨论
-- ✅ 监控 Reddit 各社区热点
-- ✅ 追踪 GitHub Trending 项目
-- ✅ 搜索 AI/科技前沿关键词
-- ✅ 每6小时自动扫描全球热点
+- ✅ **100% 免费**：GitHub/HN/Reddit 完全免费使用
+- ✅ **无需 API Key**：无需注册，无需付费
+- ✅ **v2rayA 代理**：已配置，可访问 Google/GitHub
+- ✅ **语言**：中文发布（所有国际资讯翻译整理成中文）
+- ✅ **内容**：技术、编程、AI、开源项目为主
+- ✅ **每6小时**：自动扫描全球技术热点
 - ⚠️ **政治敏感内容过滤**（禁止意识形态相关、抹黑党和国家内容）
+
+### 💰 成本对比
+
+| 方案 | 月成本 | 年成本 | 评估 |
+|------|--------|--------|------|
+| Brave API | $0→$120+ | $1440+ | ❌ 仅首月免费 |
+| 免费组合 | **$0** | **$0** | ✅ 推荐使用 |
 
 ---
 
@@ -167,6 +179,7 @@ openclaw cron add \
 
 ### 发布原则
 - ✅ **可发布**：科技、财经、生活、娱乐、教育等资讯
+- ✅ **重点获取**：GitHub开源项目、Hacker News技术讨论、Reddit编程社区
 - ⚠️ **谨慎处理**：国际政治事件需引用国内官方媒体
 - ❌ **禁止发布**：意识形态、抹黑党和国家的言论
 
@@ -174,7 +187,9 @@ openclaw cron add \
 1. 自动过滤敏感关键词
 2. 人工审核敏感内容
 3. 优先使用国内官方源替代敏感国际新闻
+4. **内容安全**：只发布技术类、编程类、生活类资讯
 
 ### 规则记录时间
 **2026-02-10 22:23** - 蒋国春制定
+**2026-02-11 00:17** - 更新为免费方案
 **执行标准**: 严格遵守

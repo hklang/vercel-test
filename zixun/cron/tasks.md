@@ -128,26 +128,35 @@ openclaw cron rm <任务ID>
 
 ---
 
-## 🌐 域外搜索资讯（新增）
+## 🌐 域外搜索资讯（完全免费方案）
 
-### 外部搜索引擎
-| 引擎 | 用途 | 访问方式 |
-|------|------|----------|
-| 🔍 Google | 综合搜索 | web_search (Brave API) |
-| 🗣️ Bing | 微软搜索 | web_search |
-| 🔎 DuckDuckGo | 隐私搜索 | web_search |
+> 💰 **Brave API 仅免费1个月，已替换为 100% 免费方案**
 
-### 国际信息网站
-| 类别 | 网站 | 用途 |
-|------|------|------|
-| 📊 数据统计 | Our World in Data | 全球数据可视化 |
-| 📈 财经数据 | TradingView | 金融市场图表 |
-| 💻 技术资讯 | Hacker News | 科技新闻社区 |
-| 🧠 AI前沿 | Arxiv | 学术论文预印本 |
-| 📰 综合新闻 | Reuters | 路透社国际新闻 |
-| 🗳️ 社交媒体 | Reddit | 社区讨论热点 |
-| 🎥 视频资讯 | YouTube Trending | 热门视频趋势 |
-| 💼 商业资讯 | Bloomberg | 彭博商业新闻 |
+### ✅ 免费数据源
+
+| 方案 | 免费限制 | 数据来源 | 使用方式 |
+|------|---------|----------|----------|
+| **GitHub Trending** | 完全免费 | github.com/trending | Python脚本 |
+| **Hacker News API** | 完全免费 | news.ycombinator.com | Firebase API |
+| **Reddit API** | 完全免费 | reddit.com | JSON API |
+| **v2rayA 代理** | 已配置 | Google/GitHub | 代理访问 |
+
+### 📦 免费源脚本
+
+**脚本位置**: `zixun/cron/scripts/free_sources.py`
+
+```bash
+# 获取所有免费数据源
+cd /home/lang/.openclaw/workspace/zixun/cron/scripts
+python3 free_sources.py
+
+# 输出格式
+{
+  " github": [...],   # GitHub Trending
+  "hackernews": [...],  # Hacker News Top Stories
+  "reddit": [...]    # Reddit Hot Posts
+}
+```
 
 ### 定时任务：域外热点扫描
 
@@ -158,7 +167,7 @@ openclaw cron add \
   --cron "0 */6 * * *" \
   --tz "Asia/Shanghai" \
   --session isolated \
-  --message "执行域外搜索：1.使用web_search搜索今日Google Trends热点 2.获取Hacker News热门话题 3.抓取Reddit热门讨论 4.搜索AI/科技前沿关键词 5.整理成域外资讯摘要发送到飞书群" \
+  --message "执行域外搜索：1.获取GitHub Trending热门项目 2.获取Hacker News Top 10 3.获取Reddit热门讨论 4.政治敏感内容过滤 5.整理成中文资讯发送到飞书群" \
   --announce \
   --channel feishu \
   --to "oc_982e81066ead19e659ccff0f5f509ddd"
@@ -169,77 +178,78 @@ openclaw cron add \
 - **Cron表达式**：`0 */6 * * *`
 - **Session**: isolated
 - **功能**：
-  1. 搜索 Google Trends 今日热点
-  2. 获取 Hacker News Top 10
-  3. 抓取 Reddit 各社区热门话题
-  4. 搜索 AI/科技前沿关键词（GPT-5, Claude, etc.）
-  5. 搜索 GitHub Trending 热门项目
-  6. **执行政治敏感内容过滤**
-  7. 整理成域外资讯摘要
-
-#### ⚠️ 政治敏感内容规则
-- ❌ 禁止发布：意识形态相关、抹黑党和国家的言论
-- ✅ 安全内容：科技、财经、生活、娱乐类资讯
-- ⚠️ 谨慎处理：国际政治事件需引用国内官方媒体
-- 📋 过滤机制：自动过滤敏感词，人工审核敏感内容
+  1. ✅ 获取 GitHub Trending Top 10
+  2. ✅ 获取 Hacker News Top 10
+  3. ✅ 获取 Reddit 热门帖子
+  4. ⚠️ 政治敏感内容过滤
+  5. 🇨🇳 翻译整理成中文
+  6. 📱 发送到飞书群
 
 #### 内容分配（每6小时）
 | 时间 | 搜索重点 |
 |------|----------|
-| **0:00** | 前一日全球热点总结 |
-| **6:00** | 凌晨至早间国际动态 |
-| **12:00** | 午间全球热点扫描 |
-| **18:00** | 晚间域外资讯汇总 |
+| **0:00** | 前一日全球技术热点总结 |
+| **6:00** | 凌晨至早间开发者讨论 |
+| **12:00** | 午间全球开源项目 |
+| **18:00** | 晚间技术社区汇总 |
 
-### 搜索关键词配置
+### 💰 成本对比
 
-#### 科技AI类
-```
-AI, GPT-4, GPT-5, Claude, Gemini, LLM, AGI
-Machine Learning, Deep Learning, Neural Network
-OpenAI, Anthropic, Google DeepMind
-```
+| 方案 | 月成本 | 年成本 | 评估 |
+|------|--------|--------|------|
+| Brave API | $0→$120+ | $1440+ | ❌ 仅首月免费 |
+| 免费组合 | **$0** | **$0** | ✅ **推荐使用** |
 
-#### 商业财经类
-```
-Stock Market, NASDAQ, S&P 500
-Tesla, Apple, Microsoft, Google
-Cryptocurrency, Bitcoin, Ethereum
-```
+### 📋 来源统计
 
-#### 热门话题类
-```
-Viral, Trending, Popular
-Breaking News, Latest Updates
-```
+| 类型 | 数量 | 来源 |
+|------|------|------|
+| 🏠 国内门户 | 10 | 新浪、腾讯、网易等 |
+| 📋 官方媒体 | 6 | 人民日报、新华社等 |
+| 🔥 热搜平台 | 7 | 百度、知乎、微博等 |
+| 💻 科技媒体 | 10 | 36氪、虎嗅、钛媒体等 |
+| 💰 财经媒体 | 10 | 东方财富、华尔街见闻等 |
+| 🌍 国际媒体 | 10 | BBC、CNN、路透社等 |
+| 🌐 域外免费源 | 3 | GitHub/HN/Reddit |
+| **总计** | **56** | **+ 93个备用源** |
 
 ### 推送模板（域外资讯版）
 ```
 🌍 域外资讯 · 全球视野
-━━━━━━━━━━━━━━━━
-🔍 Google Trends 热点
-1. 热点话题1
-2. 热点话题2
+━━━━━━━━━━━━━━━━━━━━━━
+
+🔧 GitHub Trending Top 10
+━━━━━━━━━━━━━━━━━━━━━━
+1. 项目名/仓库 ⭐stars
+   描述：一句话介绍
+   语言：Python
+
+2. 项目名/仓库 ⭐stars
+   描述：一句话介绍
+   语言：TypeScript
 ...
 
 💻 Hacker News Top 10
-1. 标题1 (分数)
-2. 标题2 (分数)
+━━━━━━━━━━━━━━━━━━━━━━
+1. 标题（分数）
+   链接: https://...
+   标签: [AI, Startup]
+
+2. 标题（分数）
+   链接: https://...
+   标签: [DevOps, Cloud]
 ...
 
 🤖 Reddit 热门讨论
-• r/all 热门1
-• r/technology 热门2
+━━━━━━━━━━━━━━━━━━━━━━
+r/technology Top 3
+• 帖子标题 ( upvotes: 25k )
+• 帖子标题 ( upvotes: 20k )
 ...
 
-🔧 GitHub Trending
-• 项目1 (⭐ stars)
-• 项目2 (⭐ stars)
-...
-
-📊 数据洞察
-• 关键数据点
-• 市场趋势分析
-━━━━━━━━━━━━━━━━
-🦊 来源：Google Trends + Hacker News + Reddit + GitHub
+━━━━━━━━━━━━━━━━━━━━━━
+🦊 来源：GitHub Trending + Hacker News + Reddit
+📝 语言：100% 中文
+💰 成本：完全免费 ✅
+⚠️ 内容已过滤政治敏感信息
 ```
