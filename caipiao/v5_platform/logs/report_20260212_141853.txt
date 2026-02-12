@@ -24,7 +24,7 @@
 📁 输出文件
   预测结果: /home/lang/.openclaw/workspace/caipiao/v6_output/predictions_latest.csv
   模型目录: /home/lang/.openclaw/workspace/caipiao/v6_models
-  日志目录: /home/lang/.openclaw/workspace/caipiao/v6_logs
+  日志目录: /home/lang/.openclaw/workspace/caipiao/v5_platform/logs
 
 ---
-生成时间: 2026-02-12T07:51:29.403943
+生成时间: 2026-02-12T14:18:53.321589

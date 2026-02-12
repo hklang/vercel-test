@@ -29,7 +29,7 @@ from pathlib import Path
 WORKSPACE = '/home/lang/.openclaw/workspace/caipiao/v6_system'
 PYTHON = sys.executable
 PID_FILE = '/home/lang/.openclaw/workspace/caipiao/v6_system/v6.pid'
-LOG_FILE = '/home/lang/.openclaw/workspace/caipiao/v6_logs/system.log'
+LOG_FILE = '/home/lang/.openclaw/workspace/caipiao/v5_platform/logs/system.log'
 
 
 def check_running():
