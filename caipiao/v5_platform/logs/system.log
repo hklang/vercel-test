@@ -75,3 +75,123 @@
 2026-02-13 02:19:22,922 - INFO - 生成 100 组预测 (尝试128次)
 2026-02-13 02:19:22,923 - INFO - 保存预测: /home/lang/.openclaw/workspace/caipiao/v5_platform/output/predictions_20260213_021922.csv
 2026-02-13 02:19:22,923 - INFO - 保存报告: /home/lang/.openclaw/workspace/caipiao/v5_platform/output/report_20260213_021922.txt
+2026-02-13 03:19:22,924 - INFO - 分析数据...
+2026-02-13 03:19:22,928 - INFO - 周期性分析完成
+2026-02-13 03:19:22,930 - INFO - 生成 100 组预测 (尝试123次)
+2026-02-13 03:19:22,932 - INFO - 保存预测: /home/lang/.openclaw/workspace/caipiao/v5_platform/output/predictions_20260213_031922.csv
+2026-02-13 03:19:22,933 - INFO - 保存报告: /home/lang/.openclaw/workspace/caipiao/v5_platform/output/report_20260213_031922.txt
+2026-02-13 04:19:22,934 - INFO - 分析数据...
+2026-02-13 04:19:22,939 - INFO - 周期性分析完成
+2026-02-13 04:19:22,944 - INFO - 生成 100 组预测 (尝试119次)
+2026-02-13 04:19:22,948 - INFO - 保存预测: /home/lang/.openclaw/workspace/caipiao/v5_platform/output/predictions_20260213_041922.csv
+2026-02-13 04:19:22,950 - INFO - 保存报告: /home/lang/.openclaw/workspace/caipiao/v5_platform/output/report_20260213_041922.txt
+2026-02-13 05:19:22,952 - INFO - 分析数据...
+2026-02-13 05:19:22,952 - INFO - 周期性分析完成
+2026-02-13 05:19:22,953 - INFO - 生成 100 组预测 (尝试117次)
+2026-02-13 05:19:22,954 - INFO - 保存预测: /home/lang/.openclaw/workspace/caipiao/v5_platform/output/predictions_20260213_051922.csv
+2026-02-13 05:19:22,955 - INFO - 保存报告: /home/lang/.openclaw/workspace/caipiao/v5_platform/output/report_20260213_051922.txt
+2026-02-13 06:19:22,956 - INFO - 分析数据...
+2026-02-13 06:19:22,957 - INFO - 周期性分析完成
+2026-02-13 06:19:22,958 - INFO - 生成 100 组预测 (尝试134次)
+2026-02-13 06:19:22,959 - INFO - 保存预测: /home/lang/.openclaw/workspace/caipiao/v5_platform/output/predictions_20260213_061922.csv
+2026-02-13 06:19:22,959 - INFO - 保存报告: /home/lang/.openclaw/workspace/caipiao/v5_platform/output/report_20260213_061922.txt
+2026-02-13 07:19:22,960 - INFO - 分析数据...
+2026-02-13 07:19:22,963 - INFO - 周期性分析完成
+2026-02-13 07:19:22,966 - INFO - 生成 100 组预测 (尝试123次)
+2026-02-13 07:19:22,968 - INFO - 保存预测: /home/lang/.openclaw/workspace/caipiao/v5_platform/output/predictions_20260213_071922.csv
+2026-02-13 07:19:22,969 - INFO - 保存报告: /home/lang/.openclaw/workspace/caipiao/v5_platform/output/report_20260213_071922.txt
+2026-02-13 08:19:22,970 - INFO - 分析数据...
+2026-02-13 08:19:22,971 - INFO - 周期性分析完成
+2026-02-13 08:19:22,973 - INFO - 生成 100 组预测 (尝试128次)
+2026-02-13 08:19:22,974 - INFO - 保存预测: /home/lang/.openclaw/workspace/caipiao/v5_platform/output/predictions_20260213_081922.csv
+2026-02-13 08:19:22,975 - INFO - 保存报告: /home/lang/.openclaw/workspace/caipiao/v5_platform/output/report_20260213_081922.txt
+2026-02-13 09:19:22,975 - INFO - 分析数据...
+2026-02-13 09:19:22,976 - INFO - 周期性分析完成
+2026-02-13 09:19:22,978 - INFO - 生成 100 组预测 (尝试118次)
+2026-02-13 09:19:22,979 - INFO - 保存预测: /home/lang/.openclaw/workspace/caipiao/v5_platform/output/predictions_20260213_091922.csv
+2026-02-13 09:19:22,979 - INFO - 保存报告: /home/lang/.openclaw/workspace/caipiao/v5_platform/output/report_20260213_091922.txt
+2026-02-13 10:19:22,980 - INFO - 分析数据...
+2026-02-13 10:19:22,982 - INFO - 周期性分析完成
+2026-02-13 10:19:22,984 - INFO - 生成 100 组预测 (尝试120次)
+2026-02-13 10:19:22,985 - INFO - 保存预测: /home/lang/.openclaw/workspace/caipiao/v5_platform/output/predictions_20260213_101922.csv
+2026-02-13 10:19:22,986 - INFO - 保存报告: /home/lang/.openclaw/workspace/caipiao/v5_platform/output/report_20260213_101922.txt
+2026-02-13 11:19:22,986 - INFO - 分析数据...
+2026-02-13 11:19:22,992 - INFO - 周期性分析完成
+2026-02-13 11:19:22,994 - INFO - 生成 100 组预测 (尝试122次)
+2026-02-13 11:19:22,996 - INFO - 保存预测: /home/lang/.openclaw/workspace/caipiao/v5_platform/output/predictions_20260213_111922.csv
+2026-02-13 11:19:22,996 - INFO - 保存报告: /home/lang/.openclaw/workspace/caipiao/v5_platform/output/report_20260213_111922.txt
+2026-02-13 12:19:22,999 - INFO - 分析数据...
+2026-02-13 12:19:23,001 - INFO - 周期性分析完成
+2026-02-13 12:19:23,002 - INFO - 生成 100 组预测 (尝试123次)
+2026-02-13 12:19:23,002 - INFO - 保存预测: /home/lang/.openclaw/workspace/caipiao/v5_platform/output/predictions_20260213_121923.csv
+2026-02-13 12:19:23,005 - INFO - 保存报告: /home/lang/.openclaw/workspace/caipiao/v5_platform/output/report_20260213_121923.txt
+2026-02-13 13:19:23,005 - INFO - 分析数据...
+2026-02-13 13:19:23,006 - INFO - 周期性分析完成
+2026-02-13 13:19:23,007 - INFO - 生成 100 组预测 (尝试119次)
+2026-02-13 13:19:23,008 - INFO - 保存预测: /home/lang/.openclaw/workspace/caipiao/v5_platform/output/predictions_20260213_131923.csv
+2026-02-13 13:19:23,008 - INFO - 保存报告: /home/lang/.openclaw/workspace/caipiao/v5_platform/output/report_20260213_131923.txt
+2026-02-13 14:19:23,009 - INFO - 分析数据...
+2026-02-13 14:19:23,011 - INFO - 周期性分析完成
+2026-02-13 14:19:23,012 - INFO - 生成 100 组预测 (尝试127次)
+2026-02-13 14:19:23,013 - INFO - 保存预测: /home/lang/.openclaw/workspace/caipiao/v5_platform/output/predictions_20260213_141923.csv
+2026-02-13 14:19:23,013 - INFO - 保存报告: /home/lang/.openclaw/workspace/caipiao/v5_platform/output/report_20260213_141923.txt
+2026-02-13 15:19:23,014 - INFO - 分析数据...
+2026-02-13 15:19:23,019 - INFO - 周期性分析完成
+2026-02-13 15:19:23,024 - INFO - 生成 100 组预测 (尝试122次)
+2026-02-13 15:19:23,027 - INFO - 保存预测: /home/lang/.openclaw/workspace/caipiao/v5_platform/output/predictions_20260213_151923.csv
+2026-02-13 15:19:23,029 - INFO - 保存报告: /home/lang/.openclaw/workspace/caipiao/v5_platform/output/report_20260213_151923.txt
+2026-02-13 16:19:23,030 - INFO - 分析数据...
+2026-02-13 16:19:23,032 - INFO - 周期性分析完成
+2026-02-13 16:19:23,033 - INFO - 生成 100 组预测 (尝试131次)
+2026-02-13 16:19:23,034 - INFO - 保存预测: /home/lang/.openclaw/workspace/caipiao/v5_platform/output/predictions_20260213_161923.csv
+2026-02-13 16:19:23,035 - INFO - 保存报告: /home/lang/.openclaw/workspace/caipiao/v5_platform/output/report_20260213_161923.txt
+2026-02-13 17:19:23,036 - INFO - 分析数据...
+2026-02-13 17:19:23,040 - INFO - 周期性分析完成
+2026-02-13 17:19:23,043 - INFO - 生成 100 组预测 (尝试128次)
+2026-02-13 17:19:23,045 - INFO - 保存预测: /home/lang/.openclaw/workspace/caipiao/v5_platform/output/predictions_20260213_171923.csv
+2026-02-13 17:19:23,046 - INFO - 保存报告: /home/lang/.openclaw/workspace/caipiao/v5_platform/output/report_20260213_171923.txt
+2026-02-13 18:19:23,048 - INFO - 分析数据...
+2026-02-13 18:19:23,050 - INFO - 周期性分析完成
+2026-02-13 18:19:23,055 - INFO - 生成 100 组预测 (尝试126次)
+2026-02-13 18:19:23,057 - INFO - 保存预测: /home/lang/.openclaw/workspace/caipiao/v5_platform/output/predictions_20260213_181923.csv
+2026-02-13 18:19:23,058 - INFO - 保存报告: /home/lang/.openclaw/workspace/caipiao/v5_platform/output/report_20260213_181923.txt
+2026-02-13 19:19:23,059 - INFO - 分析数据...
+2026-02-13 19:19:23,065 - INFO - 周期性分析完成
+2026-02-13 19:19:23,073 - INFO - 生成 100 组预测 (尝试130次)
+2026-02-13 19:19:23,074 - INFO - 保存预测: /home/lang/.openclaw/workspace/caipiao/v5_platform/output/predictions_20260213_191923.csv
+2026-02-13 19:19:23,083 - INFO - 保存报告: /home/lang/.openclaw/workspace/caipiao/v5_platform/output/report_20260213_191923.txt
+2026-02-13 20:19:23,084 - INFO - 分析数据...
+2026-02-13 20:19:23,085 - INFO - 周期性分析完成
+2026-02-13 20:19:23,086 - INFO - 生成 100 组预测 (尝试117次)
+2026-02-13 20:19:23,089 - INFO - 保存预测: /home/lang/.openclaw/workspace/caipiao/v5_platform/output/predictions_20260213_201923.csv
+2026-02-13 20:19:23,091 - INFO - 保存报告: /home/lang/.openclaw/workspace/caipiao/v5_platform/output/report_20260213_201923.txt
+2026-02-13 21:19:23,091 - INFO - 分析数据...
+2026-02-13 21:19:23,105 - INFO - 周期性分析完成
+2026-02-13 21:19:23,106 - INFO - 生成 100 组预测 (尝试123次)
+2026-02-13 21:19:23,117 - INFO - 保存预测: /home/lang/.openclaw/workspace/caipiao/v5_platform/output/predictions_20260213_211923.csv
+2026-02-13 21:19:23,117 - INFO - 保存报告: /home/lang/.openclaw/workspace/caipiao/v5_platform/output/report_20260213_211923.txt
+2026-02-13 22:19:23,118 - INFO - 分析数据...
+2026-02-13 22:19:23,120 - INFO - 周期性分析完成
+2026-02-13 22:19:23,121 - INFO - 生成 100 组预测 (尝试124次)
+2026-02-13 22:19:23,122 - INFO - 保存预测: /home/lang/.openclaw/workspace/caipiao/v5_platform/output/predictions_20260213_221923.csv
+2026-02-13 22:19:23,123 - INFO - 保存报告: /home/lang/.openclaw/workspace/caipiao/v5_platform/output/report_20260213_221923.txt
+2026-02-13 23:19:23,143 - INFO - 分析数据...
+2026-02-13 23:19:23,158 - INFO - 周期性分析完成
+2026-02-13 23:19:23,160 - INFO - 生成 100 组预测 (尝试117次)
+2026-02-13 23:19:23,171 - INFO - 保存预测: /home/lang/.openclaw/workspace/caipiao/v5_platform/output/predictions_20260213_231923.csv
+2026-02-13 23:19:23,172 - INFO - 保存报告: /home/lang/.openclaw/workspace/caipiao/v5_platform/output/report_20260213_231923.txt
+2026-02-14 00:19:23,205 - INFO - 分析数据...
+2026-02-14 00:19:23,293 - INFO - 周期性分析完成
+2026-02-14 00:19:23,298 - INFO - 生成 100 组预测 (尝试131次)
+2026-02-14 00:19:23,302 - INFO - 保存预测: /home/lang/.openclaw/workspace/caipiao/v5_platform/output/predictions_20260214_001923.csv
+2026-02-14 00:19:23,332 - INFO - 保存报告: /home/lang/.openclaw/workspace/caipiao/v5_platform/output/report_20260214_001923.txt
+2026-02-14 01:19:23,433 - INFO - 分析数据...
+2026-02-14 01:19:23,617 - INFO - 周期性分析完成
+2026-02-14 01:19:23,626 - INFO - 生成 100 组预测 (尝试126次)
+2026-02-14 01:19:23,634 - INFO - 保存预测: /home/lang/.openclaw/workspace/caipiao/v5_platform/output/predictions_20260214_011923.csv
+2026-02-14 01:19:23,657 - INFO - 保存报告: /home/lang/.openclaw/workspace/caipiao/v5_platform/output/report_20260214_011923.txt
+2026-02-14 02:19:23,766 - INFO - 分析数据...
+2026-02-14 02:19:23,822 - INFO - 周期性分析完成
+2026-02-14 02:19:23,825 - INFO - 生成 100 组预测 (尝试129次)
+2026-02-14 02:19:23,827 - INFO - 保存预测: /home/lang/.openclaw/workspace/caipiao/v5_platform/output/predictions_20260214_021923.csv
+2026-02-14 02:19:23,830 - INFO - 保存报告: /home/lang/.openclaw/workspace/caipiao/v5_platform/output/report_20260214_021923.txt

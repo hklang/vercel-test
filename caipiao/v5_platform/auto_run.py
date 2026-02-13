@@ -74,6 +74,10 @@ def run_once():
     print("运行预测任务")
     print("="*50)
     os.system(f'{sys.executable} {PREDICT_SCRIPT}')
+    
+    # 发送飞书通知
+    print("\n📤 发送飞书通知...")
+    os.system(f'{sys.executable} /home/lang/.openclaw/workspace/caipiao/v5_platform/notify_feishu.py')
 
 
 def show_status():

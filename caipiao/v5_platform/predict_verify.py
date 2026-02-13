@@ -43,6 +43,7 @@ METHODS = {
     'AC值法': {'window': 50, '依据': 'AC值10-12为佳'},
     '极距法': {'window': 100, '依据': '极距18-22'},
     '周期回补法': {'window': None, '依据': '周期性遗漏回补'},
+    '智能版': {'window': None, '依据': '多策略组合预测'},
 }
 
 
@@ -69,6 +70,8 @@ class Predictor:
             pool = self._get_repeat_pool()
         elif method_name == '周期回补法':
             pool = self._get_cycle_pool()
+        elif method_name == '智能版':
+            pool = self._get_smart_pool()
         else:
             pool = list(range(1, 31))
         
@@ -157,6 +160,52 @@ class Predictor:
             if gap > 30:
                 recovery.append(num)
         return recovery[:15] if recovery else list(range(1, 31))
+    
+    def _get_smart_pool(self):
+        """智能版 - 多策略组合"""
+        # 1. 热号（30期）
+        hot_pool = self._get_hot_pool()
+        
+        # 2. 重号（与上期重复）
+        repeat_pool = self._get_repeat_pool()
+        
+        # 3. 遗漏值（10-20期，即将回补）
+        recovery_pool = []
+        for num in range(1, 31):
+            gap = 0
+            for d in reversed(self.history[-30:]):
+                if num in [int(n) for n in d['basic_numbers']]:
+                    break
+                gap += 1
+            if 10 <= gap <= 20:
+                recovery_pool.append(num)
+        
+        # 4. 连号
+        consecutive_pool = []
+        for d in self.history[-10:]:
+            nums = sorted([int(n) for n in d['basic_numbers']])
+            for i in range(len(nums)-1):
+                if nums[i+1] - nums[i] == 1:
+                    consecutive_pool.extend([nums[i], nums[i+1]])
+        consecutive_pool = list(set(consecutive_pool))
+        
+        # 合并所有池子（加权）
+        pool_scores = {}
+        for n in range(1, 31):
+            score = 0
+            if n in hot_pool[:15]:
+                score += 3
+            if n in repeat_pool:
+                score += 3
+            if n in recovery_pool:
+                score += 2
+            if n in consecutive_pool:
+                score += 1
+            pool_scores[n] = score
+        
+        # 按分数排序，取前15
+        sorted_pool = sorted(pool_scores.items(), key=lambda x: x[1], reverse=True)
+        return [n for n, _ in sorted_pool[:15]]
     
     def _check(self, nums: List[int]) -> bool:
         nums = sorted(nums)
