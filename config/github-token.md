@@ -3,7 +3,7 @@
 ## Token 信息
 
 - **用户名**: hklang
-- **Token**: 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
+- **Token**: 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
 - **权限**: repo (完整仓库访问)
 - **创建时间**: 2026-02-10
 - **过期时间**: 无 (No expiration)
@@ -16,7 +16,7 @@
 
 ```bash
 # 方法1: 在URL中包含Token
-git remote set-url origin "https://hklang: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@github.com/hklang/Openclaw.git"
+git remote set-url origin "https://hklang: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@github.com/hklang/Openclaw.git"
 git push -u origin master
 
 # 方法2: 使用 git credential
@@ -38,9 +38,9 @@ git config --global credential.helper store
 ## 备份状态
 
 - **本地提交**: ✅ 完成
-- **GitHub推送**: ⏳ 待网络恢复后重试
-- **提交记录**: `Initial backup 2026-02-10 23:12:17`
-- **文件数量**: 406 个文件
+- **GitHub推送**: ✅ 已修复token
+- **最后推送**: 2026-02-16 23:31:44
+- **提交记录**: `Backup 2026-02-16 23:31:44`
 
 ## 后续操作
 
@@ -52,4 +52,4 @@ git push -u origin master
 
 ---
 
-**最后更新**: 2026-02-10
+**最后更新**: 2026-02-16

@@ -30,7 +30,7 @@ check_token() {
     fi
     
     # 从文件提取Token
-    TOKEN=$(grep "Token" "$BACKUP_TOKEN_FILE" | head -1 | awk '{print $2}')
+    TOKEN=$(grep -E "ghp_|github_pat_" "$BACKUP_TOKEN_FILE" | head -1 | awk '{print $NF}')
     
     if [ -z "$TOKEN" ]; then
         log "${RED}❌ 无法从文件提取Token${NC}"
