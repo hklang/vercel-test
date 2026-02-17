@@ -1,0 +1,5 @@
+Usage:
+  qlc_combo.sh 1         # single method
+  qlc_combo.sh 1,10,12  # multiple methods
+  qlc_combo.sh 1>10      # select 10 from 1, filter 5 by 10
+  qlc_combo.sh A         # combo A
