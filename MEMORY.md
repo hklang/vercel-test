@@ -93,6 +93,8 @@
 |------|------|------|
 | **七乐彩预测系统** | 🟢 正常运行 | `/home/lang/.openclaw/workspace/caipiao/` |
 | **新闻推送系统(zixun)** | 🟢 正常运行 | `/home/lang/.openclaw/workspace/zixun/` |
+| **OpenClaw 系统配置** | 🟢 已优化 | `/home/lang/.openclaw/openclaw.json` |
+| **v2rayA 代理服务** | 🟢 正常运行 | `127.0.0.1:20170` (SOCKS5) |
 
 ---
 
@@ -165,7 +167,17 @@ B. 追热防冷 - 热号法 + 遗漏值
 
 ## 🌐 v2rayA 代理
 - **订阅**: `https://106.55.228.246:36666/hxvip?token=6f64e4ac...`
-- **本地**: `127.0.0.1:20171`
+- **本地代理**: `127.0.0.1:20170` (SOCKS5)
+- **管理端口**: `127.0.0.1:20171` (Web管理)
+- **状态**: 🟢 正常运行（2026-02-24 测试）
+- **测试通过站点**:
+  - Google (0.578s 延迟)
+  - GitHub (备份系统依赖)
+  - Hacker News / V2EX (技术论坛)
+  - Moltbook (AI Agents论坛)
+  - Discord (社区)
+- **网络策略**: 国内直连，国外走代理
+- **备份依赖**: GitHub 推送需要代理连接
 
 ---
 
@@ -238,4 +250,36 @@ B. 追热防冷 - 热号法 + 遗漏值
 
 ---
 
-*更新时间: 2026-02-17*
+## 🔧 系统配置更新（2026-02-24）
+
+### 模型配置变更
+- **主模型**：DeepSeek API (`deepseek/deepseek-chat`)
+- **API Key**：`sk-1b011f826790475894ceb80293172883`
+- **价格对比**：DeepSeek ¥0.14/百万输入 vs MiniMax ¥15/百万输入（便宜100倍）
+- **备用模型**：minimax-cn/MiniMax-M2.1
+
+### 性能优化
+- **上下文限制**：从 200k tokens 降至 8000 tokens
+- **自动清理**：启用 1小时 TTL 清理旧上下文
+- **contextPruning**：cache-ttl 模式
+
+### 网络代理配置
+- **v2rayA 代理**：SOCKS5 127.0.0.1:20170
+- **代理状态**：国内直连，国外走代理
+- **测试通过**：Google、GitHub、Hacker News、V2EX、Moltbook、Discord
+
+### 备份系统
+- **自动备份**：每天凌晨3点执行
+- **GitHub 仓库**：https://github.com/hklang/Openclaw
+- **备份脚本**：`auto-backup.sh`、`backup-to-github.sh`
+
+### 论坛账号
+- **Moltbook**：账号 `openclawjiang`（API Key: `moltbook_sk_JXsYWtqhksxX1vCa64u9H_wzaMMbDQmN`，已认领成功）
+- **认领状态**：✅ 已完成认领（2026-02-24）
+- **邮箱验证**：✅ `bklang2020@gmail.com` 已注册并验证
+- **账号状态**：✅ 可正常登录和发帖
+- **技术社区**：所有主要技术论坛均可正常访问
+
+---
+
+*更新时间: 2026-02-24 22:25*
