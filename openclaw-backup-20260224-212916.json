@@ -1,0 +1,242 @@
+{
+  "meta": {
+    "lastTouchedVersion": "2026.2.14",
+    "lastTouchedAt": "2026-02-24T02:37:14.351Z"
+  },
+  "env": {
+    "MINIMAX_API_KEY": "sk-api-sZqMfZLRw6mc7VSGIsxNIUaN-hyAXgDnjqSz2wUg2cLOpVO5l4OQ8WCfqOK27BdTDWkhbJFBsZDcLEHcnN2iADX-MFafWNAnxEbNOiKQBalufYrs2XMdoMI",
+    "DEEPSEEK_API_KEY": "sk-1b011f826790475894ceb80293172883"
+  },
+  "wizard": {
+    "lastRunAt": "2026-02-15T12:16:54.707Z",
+    "lastRunVersion": "2026.2.14",
+    "lastRunCommand": "configure",
+    "lastRunMode": "local"
+  },
+  "browser": {
+    "enabled": true,
+    "defaultProfile": "mychrome",
+    "profiles": {
+      "mychrome": {
+        "cdpUrl": "http://127.0.0.1:9222",
+        "color": "#FF4500"
+      }
+    }
+  },
+  "auth": {
+    "profiles": {
+      "minimax-portal:default": {
+        "provider": "minimax-portal",
+        "mode": "oauth"
+      }
+    }
+  },
+  "models": {
+    "providers": {
+      "minimax-portal": {
+        "baseUrl": "https://api.minimaxi.com/anthropic",
+        "apiKey": "minimax-oauth",
+        "api": "anthropic-messages",
+        "models": [
+          {
+            "id": "MiniMax-M2.1",
+            "name": "MiniMax M2.1",
+            "reasoning": false,
+            "input": [
+              "text"
+            ],
+            "cost": {
+              "input": 0,
+              "output": 0,
+              "cacheRead": 0,
+              "cacheWrite": 0
+            },
+            "contextWindow": 200000,
+            "maxTokens": 8192
+          },
+          {
+            "id": "MiniMax-M2.5",
+            "name": "MiniMax M2.5",
+            "reasoning": true,
+            "input": [
+              "text"
+            ],
+            "cost": {
+              "input": 0,
+              "output": 0,
+              "cacheRead": 0,
+              "cacheWrite": 0
+            },
+            "contextWindow": 200000,
+            "maxTokens": 8192
+          }
+        ]
+      },
+      "minimax-cn": {
+        "baseUrl": "https://api.minimaxi.com/anthropic",
+        "apiKey": "${MINIMAX_API_KEY}",
+        "api": "anthropic-messages",
+        "models": [
+          {
+            "id": "MiniMax-M2.1",
+            "name": "MiniMax M2.1",
+            "reasoning": false,
+            "input": [
+              "text"
+            ],
+            "cost": {
+              "input": 15,
+              "output": 60,
+              "cacheRead": 2,
+              "cacheWrite": 10
+            },
+            "contextWindow": 200000,
+            "maxTokens": 8192
+          },
+          {
+            "id": "MiniMax-M2.5",
+            "name": "MiniMax M2.5",
+            "reasoning": true,
+            "input": [
+              "text"
+            ],
+            "cost": {
+              "input": 15,
+              "output": 60,
+              "cacheRead": 2,
+              "cacheWrite": 10
+            },
+            "contextWindow": 200000,
+            "maxTokens": 8192
+          }
+        ]
+      },
+      "deepseek": {
+        "baseUrl": "https://api.deepseek.com",
+        "apiKey": "${DEEPSEEK_API_KEY}",
+        "api": "openai-completions",
+        "models": [
+          {
+            "id": "deepseek-chat",
+            "name": "DeepSeek Chat",
+            "reasoning": false,
+            "input": [
+              "text"
+            ],
+            "cost": {
+              "input": 0.14,
+              "output": 0.28,
+              "cacheRead": 0,
+              "cacheWrite": 0
+            },
+            "contextWindow": 64000,
+            "maxTokens": 4096
+          }
+        ]
+      }
+    }
+  },
+  "agents": {
+    "defaults": {
+      "model": {
+        "primary": "deepseek/deepseek-chat",
+        "fallbacks": [
+          "minimax-cn/MiniMax-M2.1"
+        ]
+      },
+      "models": {
+        "minimax-cn/MiniMax-M2.1": {
+          "alias": "m2.1"
+        },
+        "minimax-cn/MiniMax-M2.5": {
+          "alias": "m2.5"
+        }
+      },
+      "workspace": "/home/lang/.openclaw/workspace",
+      "contextTokens": 32000,
+      "contextPruning": {
+        "mode": "cache-ttl",
+        "ttl": "1h",
+        "keepLastAssistants": 2
+      },
+      "compaction": {
+        "mode": "safeguard"
+      },
+      "maxConcurrent": 4,
+      "subagents": {
+        "maxConcurrent": 8
+      }
+    }
+  },
+  "messages": {
+    "ackReactionScope": "group-mentions"
+  },
+  "commands": {
+    "native": "auto",
+    "nativeSkills": "auto"
+  },
+  "channels": {
+    "feishu": {
+      "enabled": true,
+      "appId": "cli_a90d9b8877f89bc8",
+      "appSecret": "iKaAMz4YuW5aiWpFcuA6lc87fa13tyGf"
+    },
+    "dingtalk": {
+      "messageType": "markdown",
+      "cardTemplateId": "73ca276f-78a9-4b35-a3e3-276764ceb5bf.schema",
+      "enabled": true,
+      "clientId": "dinglseyzcif1upmpg6o",
+      "clientSecret": "sllOVE2eq-nBRbq7aWN8lijvsdRG1sP0FWy3RniUciXRTjtlK_gqpRLRFAsO3r5y",
+      "robotCode": "dinglseyzcif1upmpg6o",
+      "corpId": "dinglseyzcif1upmpg6o",
+      "agentId": "4259256884",
+      "dmPolicy": "open",
+      "groupPolicy": "open",
+      "debug": false
+    }
+  },
+  "gateway": {
+    "port": 18789,
+    "mode": "local",
+    "auth": {
+      "mode": "token",
+      "token": "fdedb48e088f6eb57912b4980c8a8c8d3500bdcab2b4c134"
+    },
+    "tailscale": {
+      "mode": "off",
+      "resetOnExit": false
+    }
+  },
+  "skills": {
+    "install": {
+      "nodeManager": "npm"
+    }
+  },
+  "plugins": {
+    "load": {
+      "paths": [
+        "/home/lang/openclaw-channel-dingtalk"
+      ]
+    },
+    "entries": {
+      "minimax-portal-auth": {
+        "enabled": true
+      },
+      "feishu": {
+        "enabled": true
+      },
+      "dingtalk": {
+        "enabled": true
+      }
+    },
+    "installs": {
+      "dingtalk": {
+        "source": "path",
+        "sourcePath": "/home/lang/openclaw-channel-dingtalk",
+        "installPath": "/home/lang/openclaw-channel-dingtalk",
+        "version": "2.1.2",
+        "installedAt": "2026-02-09T06:32:10.575Z"
+      }
+    }
+  }
+}
