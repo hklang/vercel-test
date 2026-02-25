@@ -1,0 +1,14 @@
+[
+  {
+    "name": "cf_clearance",
+    "value": "YOUR_CF_CLEARANCE_COOKIE_VALUE_HERE",
+    "domain": ".2hg.com",
+    "path": "/"
+  },
+  {
+    "name": "__cf_bm",
+    "value": "YOUR_CF_BM_COOKIE_VALUE_HERE",
+    "domain": ".2hg.com",
+    "path": "/"
+  }
+]

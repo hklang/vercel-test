@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Cloudflare Challenge Page - cf.2hg.com</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        .info { background: #f0f0f0; padding: 15px; border-radius: 5px; margin-bottom: 20px; }
+        .url { color: #0066cc; font-weight: bold; }
+        .status { color: #cc0000; font-weight: bold; }
+        .solution { background: #e8f5e8; padding: 15px; border-radius: 5px; margin-top: 20px; }
+    </style>
+</head>
+<body>
+    <h1>Cloudflare人机验证页面分析</h1>
+    
+    <div class="info">
+        <h2>页面信息</h2>
+        <p><strong>URL:</strong> <span class="url">https://cf.2hg.com/?action=mc</span></p>
+        <p><strong>状态:</strong> <span class="status">需要人机验证 (Cloudflare Turnstile)</span></p>
+        <p><strong>页面标题:</strong> "请稍候…" / "执行安全验证"</p>
+        <p><strong>验证类型:</strong> Cloudflare Turnstile (新一代人机验证)</p>
+        <p><strong>Ray ID:</strong> 9d32a73dfd09b1ab</p>
+    </div>
+    
+    <h2>页面内容摘要</h2>
+    <ul>
+        <li>网站使用Cloudflare安全服务保护</li>
+        <li>需要完成人机验证才能继续访问</li>
+        <li>验证组件: Turnstile (Cloudflare的新验证系统)</li>
+        <li>页面提示: "此网站使用安全服务来防范恶意自动程序"</li>
+    </ul>
+    
+    <div class="solution">
+        <h2>解决方案</h2>
+        <p>由于这是Cloudflare的人机验证，无法自动完成。需要：</p>
+        <ol>
+            <li>使用真实的Chrome/Firefox浏览器访问该链接</li>
+            <li>手动点击"我不是机器人"验证框</li>
+            <li>完成可能的图像识别挑战</li>
+            <li>验证通过后，页面会自动重定向到实际内容</li>
+        </ol>
+        <p><strong>验证通过后，你可以：</strong></p>
+        <ul>
+            <li>截图发给我</li>
+            <li>查看页面实际内容</li>
+            <li>从浏览器开发者工具获取cookies</li>
+        </ul>
+    </div>
+    
+    <h2>技术细节</h2>
+    <p>使用的验证脚本: <code>https://challenges.cloudflare.com/turnstile/v0/b/7f3d2ee44814/api.js</code></p>
+    <p>验证站点: cf.2hg.com</p>
+    <p>请求参数: action=mc</p>
+</body>
+</html>
