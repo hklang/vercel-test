@@ -1,0 +1,7 @@
+# 备份原来的Minimax API Key
+# 备份时间: 2026-02-26 14:03
+# 原来的key:
+sk-api-sZqMfZLRw6mc7VSGIsxNIUaN-hyAXgDnjqSz2wUg2cLOpVO5l4OQ8WCfqOK27BdTDWkhbJFBsZDcLEHcnN2iADX-MFafWNAnxEbNOiKQBalufYrs2XMdoMI
+
+# 新的Coding Plan key:
+sk-cp-KpTKjXbLB3SGVFEwWhZfs_PbudbQ4mdmmBeqnTJvDTRaKzZJtvT35urXoFvOl1gghnMB4QuZBLlQ05ZkdEe7NkzAj9eTBhPxBJY708G5WdwStPKgj6BXYvw

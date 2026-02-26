@@ -318,4 +318,28 @@
 
 ---
 
-*更新时间: 2026-02-24 22:25*
+## 🔧 系统配置更新（2026-02-26）
+
+### Minimax Coding Plan 包月密钥更新
+- **原API Key**：`sk-api-sZqMfZLRw6mc7VSGIsxNIUaN-hyAXgDnjqSz2wUg2cLOpVO5l4OQ8WCfqOK27BdTDWkhbJFBsZDcLEHcnN2iADX-MFafWNAnxEbNOiKQBalufYrs2XMdoMI`
+- **新Coding Plan Key**：`sk-cp-KpTKjXbLB3SGVFEwWhZfs_PbudbQ4mdmmBeqnTJvDTRaKzZJtvT35urXoFvOl1gghnMB4QuZBLlQ05ZkdEe7NkzAj9eTBhPxBJY708G5WdwStPKgj6BXYvw`
+- **备份文件**：`backup_minimax_key.txt`（已保存原key）
+- **更新状态**：✅ 已成功更新并重启系统
+
+### 当前模型配置
+- **主模型**：DeepSeek API (`deepseek/deepseek-chat`)
+- **备用模型**：minimax-cn/MiniMax-M2.1（使用Coding Plan密钥）
+- **备用模型别名**：`m2.1`（minimax-cn/MiniMax-M2.1）、`m2.5`（minimax-cn/MiniMax-M2.5）
+
+---
+
+### 💬 2026-02-26 用户对话记录
+- **14:28**：用户在飞书群 `oc_7873da17e98fa210dff4161ca6defd46` 询问"现在重启会生效么？"
+- **14:39**：用户发送确认消息
+- **系统状态确认**：DeepSeek是主模型，MiniMax M2.1是备用模型
+- **模型使用逻辑**：当DeepSeek可用时优先使用；MiniMax作为备用模型，当DeepSeek不可用时自动切换
+- **用户确认**：Coding Plan包月已生效，随时可用
+
+---
+
+*更新时间: 2026-02-26 14:40*
