@@ -391,3 +391,43 @@ To https://github.com/hklang/Openclaw.git
 [0;32m🚀 开始自动备份...[0m
 2026-02-27 03:00:02 - [0;32m✅ Token验证成功[0m
 [0;32m✅ Token验证成功[0m
+[master c36043d] Auto backup 2026-02-27 03:00:02
+ 27 files changed, 43480 insertions(+), 1 deletion(-)
+ create mode 100644 .agents/skills/browser-automation/SKILL.md
+ create mode 100644 caipiao/__pycache__/qlc_combo.cpython-312.pyc
+ create mode 100644 caipiao/backups/qlc_history_20260226_230527.json
+ create mode 100644 caipiao/cron_qlc_daily.json
+ create mode 100644 caipiao/cron_qlc_lottery.json
+ create mode 100644 caipiao/logs/verify.log
+ create mode 100644 caipiao/update_template.py
+ create mode 100644 caipiao/verify_history.json
+ create mode 100644 caipiao/verify_methods.py
+ create mode 100644 "caipiao/\351\242\204\346\265\213\345\212\251\346\211\213\346\250\241\346\235\277.md"
+ create mode 100755 "caipiao/\351\242\204\346\265\213\345\270\256\345\212\251.sh"
+ create mode 100644 "caipiao/\351\242\204\346\265\213\345\270\256\345\212\251_v2.md"
+ create mode 100644 "caipiao/\351\242\204\346\265\213\345\270\256\345\212\251_\347\256\200\346\264\201\347\211\210.md"
+ create mode 100644 "caipiao/\351\242\204\346\265\213\345\270\256\345\212\251\346\250\241\346\235\277.md"
+ create mode 100644 "caipiao/\351\242\204\346\265\213\345\270\256\345\212\251\346\250\241\346\235\277_v3.md"
+ create mode 100644 public/baidu-login-guide.md
+ create mode 100644 public/baidu-qrcode-trick.md
+ create mode 100644 public/cf/cloudflare-challenge-solutions.md
+ create mode 100644 public/cf/cloudflare-verification-report.md
+ create mode 100644 public/qqmail-login-guide.md
+ create mode 100644 skills-lock.json
+ create mode 100644 skills/baidupan/SKILL.md
+ create mode 120000 skills/browser-automation
+2026-02-27 03:00:02 - [0;32m✅ 提交成功: Auto backup 2026-02-27 03:00:02[0m
+[0;32m✅ 提交成功: Auto backup 2026-02-27 03:00:02[0m
+2026-02-27 03:00:02 - [0;32m☁️ 推送到GitHub...[0m
+[0;32m☁️ 推送到GitHub...[0m
+To https://github.com/hklang/Openclaw.git
+   f3b87c3..c36043d  master -> master
+2026-02-27 03:00:06 - [0;32m✅ 推送成功！[0m
+[0;32m✅ 推送成功！[0m
+2026-02-27 03:00:06 - 📂 仓库: https://github.com/hklang/Openclaw
+📂 仓库: https://github.com/hklang/Openclaw
+2026-02-27 03:00:06 - [0;32m🎉 备份完成！[0m
+[0;32m🎉 备份完成！[0m
+2026-02-27 03:00:10 - ========================================
+2026-02-27 03:00:10 - [0;32m🚀 开始自动备份...[0m
+2026-02-27 03:00:11 - [0;32m✅ Token验证成功[0m
