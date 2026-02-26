@@ -1,0 +1,10 @@
+{
+  "version": 1,
+  "skills": {
+    "browser-automation": {
+      "source": "femto/skills",
+      "sourceType": "github",
+      "computedHash": "6a6c2c2e80964a41cecc123c395f1cf937cd4901b9ed6bae9990600a755172dc"
+    }
+  }
+}

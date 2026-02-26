@@ -1,0 +1,14 @@
+{
+  "name": "七乐彩开奖更新",
+  "schedule": {
+    "kind": "cron",
+    "expr": "30 21 * * 1,3,5",
+    "tz": "Asia/Shanghai"
+  },
+  "payload": {
+    "kind": "agentTurn",
+    "message": "执行七乐彩数据更新：python3 /home/lang/.openclaw/workspace/caipiao/update_qlc.py"
+  },
+  "sessionTarget": "isolated",
+  "enabled": true
+}
