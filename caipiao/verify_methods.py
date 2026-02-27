@@ -219,36 +219,39 @@ def main():
     
     save_history(history)
     
-    # 更新模板 - 替换所有命中率
+    # 更新模板 - 按行处理，替换每种方法的第一个命中率
     with open(TEMPLATE_FILE, 'r') as f:
         lines = f.readlines()
     
+    method_names = ['重号法', '三区比', '连号法', '奇偶比', '012路', '遗漏值', 
+                    '周期回补', '极距法', '热号法', '同尾法', 'AC值法', '大小号']
+    
+    current_method = -1
     new_lines = []
-    rate_count = 0
     
     for line in lines:
-        if '命中率:' in line and rate_count < 12:
-            # 按顺序替换
-            method_names = ['重号法', '三区比', '连号法', '奇偶比', '012路', '遗漏值', 
-                          '周期回补', '极距法', '热号法', '同尾法', 'AC值法', '大小号']
-            if rate_count < len(method_names):
-                method = method_names[rate_count]
-                rate = results.get(method, 0)
-                hist = history.get(method, [0])
-                avg = sum(hist) // len(hist) if hist else 0
-                new_line = line.replace('命中率: 78%', f'命中率: {rate}%  历史:{avg}%')
-                new_line = new_line.replace('命中率: 68%', f'命中率: {rate}%  历史:{avg}%')
-                new_line = new_line.replace('命中率: 40%', f'命中率: {rate}%  历史:{avg}%')
-                new_line = new_line.replace('命中率: 30%', f'命中率: {rate}%  历史:{avg}%')
-                new_line = new_line.replace('命中率: 55%', f'命中率: {rate}%  历史:{avg}%')
-                new_line = new_line.replace('命中率: 25%', f'命中率: {rate}%  历史:{avg}%')
-                new_line = new_line.replace('命中率: 18%', f'命中率: {rate}%  历史:{avg}%')
-                new_line = new_line.replace('命中率: 15%', f'命中率: {rate}%  历史:{avg}%')
-                new_line = new_line.replace('命中率: 13%', f'命中率: {rate}%  历史:{avg}%')
-                new_lines.append(new_line)
-                rate_count += 1
-        else:
-            new_lines.append(line)
+        # 检查是否是某个方法的第一行（以数字+方法名开头）
+        for i, method in enumerate(method_names):
+            if f'{i+1} ' in line and method in line:
+                current_method = i
+                break
+        
+        # 如果当前行有命中率且是当前方法的第一条
+        if '命中率:' in line and current_method >= 0:
+            method = method_names[current_method]
+            rate = results.get(method, 0)
+            hist = history.get(method, [0])
+            avg = sum(hist) // len(hist) if hist else 0
+            
+            # 替换整行，移除后面的其他命中率历史记录
+            import re
+            # 找到 "命中率: XX%  历史:YY%" 这一段，整段替换
+            match = re.search(r'(命中率:\s*\d+%\s+历史:\d+%).*', line)
+            if match:
+                line = line[:match.start()] + f'命中率: {rate}%  历史:{avg}%' + '\n'
+                current_method = -1  # 重置，确保只替换第一个
+        
+        new_lines.append(line)
     
     with open(TEMPLATE_FILE, 'w') as f:
         f.writelines(new_lines)
