@@ -442,3 +442,25 @@ To https://github.com/hklang/Openclaw.git
 [0;32m🚀 开始自动备份...[0m
 2026-02-28 03:00:02 - [0;32m✅ Token验证成功[0m
 [0;32m✅ Token验证成功[0m
+[master 821d728] Auto backup 2026-02-28 03:00:02
+ 11 files changed, 41736 insertions(+), 72 deletions(-)
+ create mode 100644 caipiao/backups/qlc_history_20260227_213006.json
+ create mode 100755 "\351\242\204\346\265\213\345\270\256\345\212\251.sh"
+2026-02-28 03:00:02 - [0;32m✅ 提交成功: Auto backup 2026-02-28 03:00:02[0m
+[0;32m✅ 提交成功: Auto backup 2026-02-28 03:00:02[0m
+2026-02-28 03:00:02 - [0;32m☁️ 推送到GitHub...[0m
+[0;32m☁️ 推送到GitHub...[0m
+To https://github.com/hklang/Openclaw.git
+   7618eb3..821d728  master -> master
+2026-02-28 03:00:04 - [0;32m✅ 推送成功！[0m
+[0;32m✅ 推送成功！[0m
+2026-02-28 03:00:04 - 📂 仓库: https://github.com/hklang/Openclaw
+📂 仓库: https://github.com/hklang/Openclaw
+2026-02-28 03:00:04 - [0;32m🎉 备份完成！[0m
+[0;32m🎉 备份完成！[0m
+2026-03-01 03:00:01 - ========================================
+========================================
+2026-03-01 03:00:01 - [0;32m🚀 开始自动备份...[0m
+[0;32m🚀 开始自动备份...[0m
+2026-03-01 03:00:01 - [0;32m✅ Token验证成功[0m
+[0;32m✅ Token验证成功[0m
