@@ -1,0 +1,9 @@
+{
+  "description": "七乐彩预测方法验证任务",
+  "command": "python3 /home/lang/.openclaw/workspace/caipiao/verify_methods.py",
+  "schedule": "0 8-20/2 * * *",
+  "enabled": true,
+  "timeout": 300,
+  "notify_on_failure": false,
+  "notify_on_success": false
+}
