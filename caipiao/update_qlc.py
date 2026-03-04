@@ -172,7 +172,7 @@ def update_prediction_target(data):
     if not TEMPLATE_FILE.exists():
         return
     
-    # 排序数据
+    # 排序数据（按期号降序，最新在前）
     data.sort(key=lambda x: x['period'], reverse=True)
     
     latest = data[0]
@@ -180,29 +180,36 @@ def update_prediction_target(data):
     latest_date = datetime.strptime(latest['date'], '%Y-%m-%d')
     next_period = str(int(latest_period) + 1)
     
-    # 计算平均间隔
-    intervals = []
-    for i in range(min(10, len(data)-1)):
-        d1 = datetime.strptime(data[i]['date'], '%Y-%m-%d')
-        d2 = datetime.strptime(data[i+1]['date'], '%Y-%m-%d')
-        intervals.append((d1 - d2).days)
+    # 七乐彩开奖日：周一(0)、周三(2)、周五(4)
+    # 计算下一个开奖日
+    weekday = latest_date.weekday()  # 0=周一, 1=周二, ..., 6=周日
     
-    avg_interval = sum(intervals) // len(intervals) if intervals else 2
-    next_date = (latest_date + timedelta(days=avg_interval)).strftime('%Y-%m-%d')
+    # 根据当前开奖日推算下一个开奖日
+    if weekday == 0:  # 周一 -> 周三(2天后)
+        next_date = latest_date + timedelta(days=2)
+    elif weekday == 2:  # 周三 -> 周五(2天后)
+        next_date = latest_date + timedelta(days=2)
+    elif weekday == 4:  # 周五 -> 下周一(3天后)
+        next_date = latest_date + timedelta(days=3)
+    else:
+        # 如果不是开奖日（如数据有误），默认找下一个周一/三/五
+        next_date = latest_date + timedelta(days=2)
+    
+    next_date_str = next_date.strftime('%Y-%m-%d')
     
     # 读取模板
     with open(TEMPLATE_FILE, 'r', encoding='utf-8') as f:
         content = f.read()
     
     # 替换预测目标
-    old_target = f"📌 预测目标: 第{next_period}期 (预计{next_date}开奖)"
+    old_target = f"📌 预测目标: 第{next_period}期 (预计{next_date_str}开奖)"
     import re
     content = re.sub(r'📌 预测目标: 第\d+期 \(预计\d+-\d+-\d+开奖\)', old_target, content)
     
     with open(TEMPLATE_FILE, 'w', encoding='utf-8') as f:
         f.write(content)
     
-    log(f"预测目标已更新: 第{next_period}期 (预计{next_date}开奖)")
+    log(f"预测目标已更新: 第{next_period}期 (预计{next_date_str}开奖)")
 
 if __name__ == "__main__":
     sys.exit(main())
