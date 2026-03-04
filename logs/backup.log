@@ -617,3 +617,24 @@ error: 无法推送一些引用到 'https://github.com/hklang/Openclaw.git'
 [0;32m🚀 开始自动备份...[0m
 2026-03-05 03:00:02 - [0;32m✅ Token验证成功[0m
 [0;32m✅ Token验证成功[0m
+[master aaff135] Auto backup 2026-03-05 03:00:02
+ 10 files changed, 42090 insertions(+), 11 deletions(-)
+ create mode 100644 caipiao/backups/qlc_history_20260304_213003.json
+ create mode 100644 config/fal-api-key.md
+ create mode 100644 "video/API\350\260\203\347\240\224.md"
+ create mode 100644 "video/\344\273\273\345\212\241\346\213\206\345\210\206.md"
+2026-03-05 03:00:02 - [0;32m✅ 提交成功: Auto backup 2026-03-05 03:00:02[0m
+[0;32m✅ 提交成功: Auto backup 2026-03-05 03:00:02[0m
+2026-03-05 03:00:02 - [0;32m☁️ 推送到GitHub...[0m
+[0;32m☁️ 推送到GitHub...[0m
+To https://github.com/hklang/Openclaw.git
+   8b4b6fb..aaff135  master -> master
+2026-03-05 03:00:05 - [0;32m✅ 推送成功！[0m
+[0;32m✅ 推送成功！[0m
+2026-03-05 03:00:05 - 📂 仓库: https://github.com/hklang/Openclaw
+📂 仓库: https://github.com/hklang/Openclaw
+2026-03-05 03:00:05 - [0;32m🎉 备份完成！[0m
+[0;32m🎉 备份完成！[0m
+2026-03-05 07:00:18 - ========================================
+2026-03-05 07:00:18 - [0;32m🚀 开始自动备份...[0m
+2026-03-05 07:00:18 - [0;32m✅ Token验证成功[0m
