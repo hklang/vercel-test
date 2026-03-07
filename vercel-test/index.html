@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>七乐彩预测</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { 
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+        .container {
+            background: white;
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            max-width: 500px;
+            width: 100%;
+        }
+        h1 { text-align: center; color: #333; margin-bottom: 30px; }
+        .btn {
+            display: block;
+            width: 100%;
+            padding: 15px;
+            margin: 10px 0;
+            border: none;
+            border-radius: 10px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+        .btn:hover { transform: scale(1.02); }
+        .btn-primary { background: #667eea; color: white; }
+        .btn-secondary { background: #764ba2; color: white; }
+        .result {
+            margin-top: 20px;
+            padding: 20px;
+            background: #f5f5f5;
+            border-radius: 10px;
+            display: none;
+        }
+        .numbers {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin: 15px 0;
+        }
+        .num {
+            width: 45px;
+            height: 45px;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 18px;
+        }
+        .info { color: #666; font-size: 14px; text-align: center; }
+        .backend-status {
+            text-align: center;
+            padding: 10px;
+            margin-bottom: 20px;
+            border-radius: 8px;
+        }
+        .online { background: #d4edda; color: #155724; }
+        .offline { background: #f8d7da; color: #721c24; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🎰 七乐彩预测</h1>
+        
+        <div id="status" class="backend-status offline">后端连接中...</div>
+        
+        <button class="btn btn-primary" onclick="getPrediction()">获取预测</button>
+        <button class="btn btn-secondary" onclick="getData()">查看数据</button>
+        
+        <div id="result" class="result">
+            <div class="numbers" id="numbers"></div>
+            <p class="info" id="info"></p>
+        </div>
+    </div>
+
+    <script>
+        // 本地后端地址 - 用户需要改成自己的公网IP
+        const BACKEND = 'http://119.48.74.162:6000';
+
+        async function checkStatus() {
+            try {
+                const res = await fetch(BACKEND + '/data');
+                const data = await res.json();
+                const statusEl = document.getElementById('status');
+                statusEl.textContent = '✅ 后端在线';
+                statusEl.className = 'backend-status online';
+            } catch (e) {
+                const statusEl = document.getElementById('status');
+                statusEl.textContent = '❌ 后端离线，请检查6000端口';
+                statusEl.className = 'backend-status offline';
+            }
+        }
+
+        async function getPrediction() {
+            try {
+                const res = await fetch(BACKEND + '/predict');
+                const data = await res.json();
+                showResult(data.numbers, '预测号码: ' + data.method);
+            } catch (e) {
+                alert('获取预测失败: ' + e.message);
+            }
+        }
+
+        async function getData() {
+            try {
+                const res = await fetch(BACKEND + '/data');
+                const data = await res.json();
+                showResult([], '最新数据: ' + data.latest);
+            } catch (e) {
+                alert('获取数据失败: ' + e.message);
+            }
+        }
+
+        function showResult(nums, info) {
+            const resultEl = document.getElementById('result');
+            const numbersEl = document.getElementById('numbers');
+            const infoEl = document.getElementById('info');
+            
+            numbersEl.innerHTML = nums.map(n => `<div class="num">${n}</div>`).join('');
+            infoEl.textContent = info;
+            resultEl.style.display = 'block';
+        }
+
+        checkStatus();
+    </script>
+</body>
+</html>
