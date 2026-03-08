@@ -92,7 +92,7 @@
 
     <script>
         // 本地后端地址 - 用户需要改成自己的公网IP
-        const BACKEND = 'http://119.48.74.162:6000';
+        const BACKEND = 'http://119.48.74.162:6001';
 
         async function checkStatus() {
             try {
@@ -103,7 +103,7 @@
                 statusEl.className = 'backend-status online';
             } catch (e) {
                 const statusEl = document.getElementById('status');
-                statusEl.textContent = '❌ 后端离线，请检查6000端口';
+                statusEl.textContent = '❌ 后端离线，请检查6001端口';
                 statusEl.className = 'backend-status offline';
             }
         }
